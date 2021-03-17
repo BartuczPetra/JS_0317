@@ -52,6 +52,7 @@ function dolgozz(){
     document.getElementById("eredmeny").innerHTML="Az eredmény: <br> "+ tomb.join("; ");//.join(; ) vesszovel elválasztva írja ki   
     osszegzes();
     parosSzamok();
+    legnagyobb();
     
 }
 
@@ -74,13 +75,13 @@ function osztas() {
 
 window.addEventListener("load", init);//ezzel kell mi9ndig kezdeni!! ha lefut a program, akkor utána mehet a többi
 
-function legnagyob() {
+function legnagyobb() {
     
-   var max
-    for (var i = 0; i < nev; i++)
-        if (a[i] > a [max]      
-            max=i
-    return max
-    
-    document.getElementById("max").innerHTML="A legnagyob: "+osszeg;
+   var max=1;
+    for (var i = 0; i < tomb.length; i++){
+        if (tomb[i] > tomb[max]){      
+            max=i;
+        }
+    }
+    document.getElementById("max").innerHTML="A legnagyobb: "+max;
 }
