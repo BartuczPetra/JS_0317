@@ -1,3 +1,5 @@
+/* global osszeg */
+
 var tomb=[];
 
 function feltolt(){
@@ -44,3 +46,13 @@ function init(){
 
 window.addEventListener("load", init)//ezzel kell mi9ndig kezdeni!! ha lefut a program, akkor utána mehet a többi
 
+function legnagyob() {
+    
+   var max
+    for (var i = 0; i < nev; i++)
+        if (a[i] > a [max]      
+            max=i
+    return max
+    
+    document.getElementById("max").innerHTML="A legnagyob: "+osszeg;
+}
