@@ -1,4 +1,5 @@
 var tomb=[];
+var paros=[];
 
 function feltolt(){
     tomb=[];
@@ -9,7 +10,11 @@ function feltolt(){
 //    tomb[1]="macska";
 //    tomb[2]=False;
     for (var i = 0; i < nev; i++) {
+<<<<<<< HEAD
         var vel=Math.floor(Math.random()*10+1);//[0;1[ -> [0;10[ //Math.floor lefelé kerekít, levágja a 0.1-es jegyeket
+=======
+        var vel=Math.floor(Math.random()*10)+1;//[0;1[ -> [0;10[ //Math.floor lefelé kerekít, levágja a 0.1-es jegyeket
+>>>>>>> 1982aa76b6625e6417a66fc87117fb4b31383e54
         tomb[i]=vel;
     }
 }
@@ -20,6 +25,18 @@ function osszegzes(){
         osszeg+=tomb[i];
     }
     document.getElementById("osszeg").innerHTML="Az összeg: "+osszeg;
+}
+
+function parosSzamok(){
+    paros=[];
+    var k=0;
+    for (var i = 0; i < tomb.length; i++) {
+        if(tomb[i]%2===0){
+            paros[k]=tomb[i];
+            k++;
+        }
+    }
+    document.getElementById("paros").innerHTML="Páros számok: "+paros;
 }
 
 function dolgozz(){    
@@ -33,6 +50,7 @@ function dolgozz(){
     console.log(tomb);//kiiratjuk a consolba az elemeket
     document.getElementById("eredmeny").innerHTML="Az eredmény: <br> "+ tomb.join("; ");//.join(; ) vesszovel elválasztva írja ki   
     osszegzes();
+    parosSzamok();
     
 }
 
