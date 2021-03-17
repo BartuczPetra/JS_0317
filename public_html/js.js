@@ -3,13 +3,16 @@ var tomb=[];
 function feltolt(){
     tomb=[];
      var nev=Number(document.getElementById("adat").value);
+     var mettol=Number(document.getElementById("adat2").value);
+     var meddig=Number(document.getElementById("adat3").value);
+     
 //    var tomb=[1,2,3,4,5,3,"macska"]; //bármilyen elem mehet bele(string, int, boolean)
 //    var tomb=new Array(20);//megadjuk h 20 elemu tomb legyen, de lehet meg hozzaadni
 //    tomb[0]=1;
 //    tomb[1]="macska";
 //    tomb[2]=False;
     for (var i = 0; i < nev; i++) {
-        var vel=Math.floor(Math.random()*10);//[0;1[ -> [0;10[ //Math.floor lefelé kerekít, levágja a 0.1-es jegyeket
+        var vel=Math.floor(Math.random()*(meddig-mettol+1))+mettol;//[0;1[ ->*10 [0;10[ -> *meddig(6-mettol(3))+mettol(3) [3;6]  //Math.floor lefelé kerekít, levágja a 0.1-es jegyeket
         tomb[i]=vel;
     }
 }
