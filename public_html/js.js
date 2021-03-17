@@ -1,4 +1,5 @@
 var tomb=[];
+var paros=[];
 
 function feltolt(){
     tomb=[];
@@ -25,6 +26,18 @@ function osszegzes(){
     document.getElementById("osszeg").innerHTML="Az összeg: "+osszeg;
 }
 
+function parosSzamok(){
+    paros=[];
+    var k=0;
+    for (var i = 0; i < tomb.length; i++) {
+        if(tomb[i]%2===0){
+            paros[k]=tomb[i];
+            k++;
+        }
+    }
+    document.getElementById("paros").innerHTML="Páros számok: "+paros;
+}
+
 function dolgozz(){    
 //    document.write("Jó reggelt! "+nev); //kiirás az oldalon
 //    alert("Jó reggelt! "+nev)//felugró ablak
@@ -32,18 +45,30 @@ function dolgozz(){
 //    console.log("Hello") //a vizsgálatnál a consolhoz ir hozzá
 
     feltolt();
+    osztas();
     console.log(tomb);//kiiratjuk a consolba az elemeket
     document.getElementById("eredmeny").innerHTML="Az eredmény: <br> "+ tomb.join("; ");//.join(; ) vesszovel elválasztva írja ki   
     osszegzes();
+    parosSzamok();
     
 }
 
 function init(){
-    console.log("Első üzenet")
+    console.log("Első üzenet");
     document.getElementById("eredmeny").innerHTML+=" Én és a JS már dolgozik";//nem jó, mert még nincs ilyen elem, amikor mi mar bele akarunk iratni
-    document.getElementById("gomb").addEventListener("click", dolgozz) //az index.htmlben az onclick="kiir()" helyett
+    document.getElementById("gomb").addEventListener("click", dolgozz); //az index.htmlben az onclick="kiir()" helyett
+}
+
+function osztas() {
+    var db = 0;
+    for (var i = 0; i < tomb.length; i++) {
+        if(tomb[i]%5===0){
+            db++;
+        }
+    }
+    document.getElementById("osztas").innerHTML="5-el osztható számok:"+db + "db";
 }
 
 
-window.addEventListener("load", init)//ezzel kell mi9ndig kezdeni!! ha lefut a program, akkor utána mehet a többi
+window.addEventListener("load", init);//ezzel kell mi9ndig kezdeni!! ha lefut a program, akkor utána mehet a többi
 
