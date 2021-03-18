@@ -80,7 +80,7 @@ function legnagyobb() {
    var max=0;
     for (var i = 0; i < tomb.length; i++){
         if (tomb[i] > tomb[max]){      
-            max===i;
+            max=i;
         }
     }
     document.getElementById("max").innerHTML="A legnagyobb: "+tomb[max];
